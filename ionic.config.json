@@ -1,0 +1,8 @@
+{
+  "name": "RaphaelTCC",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

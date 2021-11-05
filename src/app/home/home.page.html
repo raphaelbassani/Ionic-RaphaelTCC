@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-grid style="padding-left: 25px; padding-right: 25px;">
+  <ion-col>
+  <ion-row style="padding-bottom: 10px; padding-top: 20px; align-items: center; justify-content: space-between;">
+      <ion-label style="font-weight: 600;font-size: 35px; color: #505050;">
+      Olá {{ name }}
+    </ion-label>
+    <ion-button (click)="getNewName()" fill="clear">
+      <ion-icon name="refresh" style="color: #505050; font-size: 28px;">
+      </ion-icon>
+    </ion-button>
+    
+    
+  </ion-row>
+  <ion-row style="border-bottom: 1px solid #505050; opacity: 40%;">
+</ion-row>
+</ion-col>
+</ion-grid>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-row *ngFor="let item of todoList; let i = index" style="padding-left: 35px; padding-right: 35px; align-items: center; justify-content: space-between;">
+    <ion-label style="color: #505050; font-size: 15px;"> {{ item.value.itemName}} </ion-label>
+   <ion-button (click)="delete(item.key)" fill="clear">
+    <ion-icon name="trash" style="color: #505050; font-size: 25px; padding-bottom: 5px;">
+    </ion-icon>
+  </ion-button>
+  </ion-row>
+  
+</ion-content>
+<ion-footer>
+  <ion-grid style="padding-left: 25px; padding-right: 25px;">
+  <ion-col>
+    <ion-row style="border-bottom: 1px solid #505050; opacity: 40%;">
+    </ion-row>
+  <ion-row style="padding-top: 10px; padding-left: 5px; align-items: center; justify-content: space-between;">
+    <ion-textarea [(ngModel)]="itemName"  placeholder="Novo item" style="color: #505050;"></ion-textarea>
+   <ion-button (click)="add()" fill="clear">
+    <ion-icon name="create" style="color: #505050; font-size: 30px; padding-bottom: 15px;">
+    </ion-icon>
+  </ion-button>
+  </ion-row>
+  </ion-col>
+</ion-grid>
+</ion-footer>
